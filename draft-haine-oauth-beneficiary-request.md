@@ -63,7 +63,19 @@ TODO Terminology
 
 TODO Beneficiary Request
 
+## Example 1
 
+```
+{
+    "beneficiaries": [
+        {
+            "beneficiary_id": "https://www.trust_anchor.org/entity_statement/1234"
+        }
+   ]
+}
+```
+
+## Example 2
 
 ```
 {

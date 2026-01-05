@@ -4,5 +4,5 @@ This draft is intended to standardise a request parameter that identifies one or
 
 ------
 
- [Repository built using the
-template described at ](https://github.com/martinthomson/i-d-template/blob/main/doc/TEMPLATE.md).
+[Repository built using the
+template described at https://github.com/martinthomson/i-d-template/blob/main/doc/TEMPLATE.md](https://github.com/martinthomson/i-d-template/blob/main/doc/TEMPLATE.md).

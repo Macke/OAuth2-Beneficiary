@@ -13,7 +13,7 @@ workgroup: WG Working Group
 keyword:
  - beneficiary
  - intermediary
- - sparkling distributed ledger
+
 venue:
   group: WG
   type: Working Group

@@ -20,6 +20,11 @@ author:
 normative:
   RFC6749:
 
+  CLIENT_ID_SCHEME: https://www.ietf.org/archive/id/draft-parecki-oauth-client-id-scheme-01.txt
+
+  RFC7591: OAuth 2.0 Dynamic Client Registration Protocol https://datatracker.ietf.org/doc/html/rfc7591
+
+
 
 informative:
 
@@ -34,19 +39,18 @@ beneficial recipients of the data returned by an OAuth transaction, and optional
 
 # Introduction
 
-In some applications of OAuth 2.0, there may be multiple legal entities which have access
+In some applications of OAuth 2.0, there may be multiple legal entities that have access
 to or process data returned by an Authorization Server. In "The OAuth 2.0 Authorization Framework",
 a `client_id` represents only a single application, and so the OAuth consent screen
 lists just one third party: the OAuth client.
 
-In this situation, in order to comply with various local laws and regulations,
-the user needs to be informed by the authorization server of the list of entities
-that will have access to their data after authorizing the client.
+In this situation, to comply with various local laws and regulations, the user needs to be informed by the authorization server of the list of entities
+that will have access to their data after the client authorizes it.
 
 This specification extends {{RFC6749}} to define a parameter that identifies
-the additional parties that receive data provided by an OAuth transaction. There may be multiple parties and there are optional mechanisms to determine metadata and validity of those additional parties
+the additional parties that receive data provided by an OAuth transaction. There may be multiple parties, and optional mechanisms exist to determine metadata and the validity of those additional parties.
 
-This specification also defines requirements of the OAuth authorization server
+This specification also defines the requirements of the OAuth authorization server
 to present this information about the additional parties in the OAuth consent screen
 during an OAuth transaction.
 
@@ -59,17 +63,44 @@ during an OAuth transaction.
 
 TODO Terminology
 
+# Beneficiary ID
+
+Each beneficiary shall be uniquely identified in the ecosystem and have a unique identifier following the client ID scheme as described in [CLIENT_ID_SCHEME].
+
+# Beneficiary metadata
+
+The following metadata can be defined for each beneficiary. 
+
+Metadata can be transmitted during the request or fetched outside it, depending on the requirements of each particular ecosystem.
+
+| # | Metadata field name    | Mandatory | Description                                                                                                 |
+| 1 | beneficiary_id         | Y         | Unique identifier as defined in [CLIENT_ID_SCHEME]                                                          |
+| 2 | beneficiary_name       | N         | Name of the beneficiary as defined for client_name in [RFC7591]                                             | 
+| 3 | beneficiary_uri        | N         | URL string of a web page providing information about the beneficiary as defined for client_uri in [RFC7591] | 
+| 4 | beneficiary_logo_uri   | N         | URL string that references a logo for the beneficiary as defined for logo_uri in [RFC7591]                  | 
+| 5 | beneficiary_tos_uri    | N         | URL string that points to a human-readable terms of service as defined for tos_uri in [RFC7591]             | 
+| 6 | beneficiary_policy_uri | N         | URL string that points to a human-readable privacy policy document as defined for policy_uri in [RFC7591]   | 
+| 7 | beneficiary_contacts   | N         | Array of strings representing ways to contact people responsible for this beneficiary as defined for contacts in [RFC7591]    | 
+| 8 | beneficiary_purpose    | N         | Human-readable purpose string as defined in TBD draft                                                       | 
+ 
+description TBC is it covered by beneficiary_uri?
+
+GDPR_type is it covered by beneficiary_policy_uri?
+
 # Beneficiary Request
 
 TODO Beneficiary Request
 
-## Example 1
+## Example 1. OpenID Federation beneficiary ecosystem.
+In this example, beneficiary_id points to the entity configuration that the Authorization Server can resolve.
+
+Note: Each ecosystem defines its own entity resolution and trust resolution rules, which are out of scope for this specification.
 
 ```
 {
     "beneficiaries": [
         {
-            "beneficiary_id": "https://www.trust_anchor.org/entity_statement/1234"
+            "beneficiary_id": "openid_federation:https://www.trust_anchor.org/entity/1234"
         }
    ]
 }

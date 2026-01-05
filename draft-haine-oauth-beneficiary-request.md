@@ -28,7 +28,7 @@ informative:
 --- abstract
 
 This specification defines a mechanism for including information about
-beneficial recipients of the data returned by an OAuth transaction, and optionally and intermediaries, by adding a new request parameter to OAuth 2.0.
+beneficial recipients of the data returned by an OAuth transaction, and optionally intermediaries, by adding a new request parameter to OAuth 2.0.
 
 --- middle
 
@@ -62,6 +62,31 @@ TODO Terminology
 # Beneficiary Request
 
 TODO Beneficiary Request
+
+
+
+```
+{
+    "dataRecipients": [
+        {
+            "RecipientID": "1234",
+            "discovery_method": "embedded",
+            "name": "TheBestController",
+            "description": "Hello World",
+            "purpose": "marketing",
+            "uri": "https://thebestcontroller.com",
+            "logo_uri": "https://thebestcontroller.com/tbclogo.svg",
+            "contacts": ["dpo@thebestcontroller.com"],
+            "GDPR_type": "processor|controller"
+        },
+        {
+            "RecipientID": "https://intermediary-one.co.uk",
+            "discovery_method": "OIDFed",
+            "uri": "https://intermediary-one.co.uk/federationendpoint"
+        }
+    ]
+}
+```
 
 
 

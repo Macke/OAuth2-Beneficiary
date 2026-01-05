@@ -1,13 +1,8 @@
-# Internet-Draft Template Repository
+# OAuth 2.0 Data Beneficiary Request Parameter
 
-Use this repository as a template if you want to start working on
-[IETF](https://www.ietf.org/) documents. [Click here to create a new repository using the
-template](https://github.com/martinthomson/internet-draft-template/generate).
-Make sure to check "Include all branches", or you will need to enable GitHub Pages manually.
+This draft is intended to standardise a request parameter that identifies one or more entities that will be the recipient of data returned as a result of an OAuth 2.0 Request.
 
-[Read the
-instructions](https://github.com/martinthomson/i-d-template/blob/main/doc/TEMPLATE.md)
-for more information.
+------
 
-Once you have created your own repository, start work by
-[renaming the `draft-todo-yourname-protocol.md` file](../../edit/main/draft-todo-yourname-protocol.md).
+ [Repository built using the
+template described at ](https://github.com/martinthomson/i-d-template/blob/main/doc/TEMPLATE.md).

@@ -5,22 +5,11 @@ category: info
 docname: draft-haine-oauth-beneficiary-request
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
-date:
-consensus: true
-v: 3
+date: 2026-01-05
 area: OAuth
-workgroup: WG Working Group
 keyword:
  - beneficiary
  - intermediary
-
-venue:
-  group: WG
-  type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
 
 author:
  -
@@ -29,6 +18,7 @@ author:
     email: mark.haine@selectid.co.uk
 
 normative:
+  RFC6749:
 
 
 informative:

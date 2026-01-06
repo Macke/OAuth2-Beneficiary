@@ -1,0 +1,264 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2026-01-06T00:56:12.439047+00:00",
+  "repo": "Macke/OAuth2-Beneficiary",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOQz-Zj867hNVz",
+      "title": "Add another example",
+      "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/1",
+      "state": "MERGED",
+      "author": "dpostnikov",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-05T11:49:40Z",
+      "updatedAt": "2026-01-05T11:51:34Z",
+      "baseRepository": "Macke/OAuth2-Beneficiary",
+      "baseRefName": "main",
+      "baseRefOid": "979fd9e06db3bdf88874c42c8e97567063191c91",
+      "headRepository": "Macke/OAuth2-Beneficiary",
+      "headRefName": "dpostnikov-patch-1",
+      "headRefOid": "3a5bfa7cba10345e3eaa8951dd175ade7e3a187e",
+      "closedAt": "2026-01-05T11:51:34Z",
+      "mergedAt": "2026-01-05T11:51:34Z",
+      "mergedBy": "Macke",
+      "mergeCommit": {
+        "oid": "b043fda5cc2037a734505c60c61c2e5e3fe534c3"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOQz-Zj87YKL2N",
+          "commit": {
+            "abbreviatedOid": "3a5bfa7"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-01-05T11:51:00Z",
+          "updatedAt": "2026-01-05T11:51:00Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOQz-Zj867iTe0",
+      "title": "Add metadata table",
+      "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/2",
+      "state": "OPEN",
+      "author": "dpostnikov",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-05T13:41:30Z",
+      "updatedAt": "2026-01-05T14:07:06Z",
+      "baseRepository": "Macke/OAuth2-Beneficiary",
+      "baseRefName": "main",
+      "baseRefOid": "b043fda5cc2037a734505c60c61c2e5e3fe534c3",
+      "headRepository": "Macke/OAuth2-Beneficiary",
+      "headRefName": "dpostnikov-patch-2",
+      "headRefOid": "6fec3b4985979c0bda9d602eb871593d144ca17a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOQz-Zj87YLhtH",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-05T13:44:42Z",
+          "updatedAt": "2026-01-05T13:44:42Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "Disagree - I think it is better English without this addition",
+              "createdAt": "2026-01-05T13:44:42Z",
+              "updatedAt": "2026-01-05T13:44:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87YLi8r",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-05T13:46:19Z",
+          "updatedAt": "2026-01-05T13:46:19Z",
+          "comments": [
+            {
+              "originalPosition": 43,
+              "body": "I don't think this shoud be mandatory - I much prefer a \"SHOULD\" here or \"RECOMMENDED\".\r\n\r\nI can imagine cases where it is good enough for the Client ID to be trusted",
+              "createdAt": "2026-01-05T13:46:19Z",
+              "updatedAt": "2026-01-05T13:46:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87YLj5z",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-05T13:47:31Z",
+          "updatedAt": "2026-01-05T13:47:32Z",
+          "comments": [
+            {
+              "originalPosition": 47,
+              "body": "I suspect this should be separate spec - mainly to keep things simple for this spec",
+              "createdAt": "2026-01-05T13:47:31Z",
+              "updatedAt": "2026-01-05T13:47:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87YLlD6",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-05T13:49:02Z",
+          "updatedAt": "2026-01-05T13:49:02Z",
+          "comments": [
+            {
+              "originalPosition": 47,
+              "body": "I think we just add a specific element that is used for typing the metadata discovery mechanism.  Only other option is to define elements of the \"embedded\" metadata option.",
+              "createdAt": "2026-01-05T13:49:02Z",
+              "updatedAt": "2026-01-05T13:49:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87YL0IH",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "dpostnikov",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-05T14:05:16Z",
+          "updatedAt": "2026-01-05T14:05:16Z",
+          "comments": [
+            {
+              "originalPosition": 43,
+              "body": "The point here was resolvable benefificaryID - if it can't be resolved to one specific entity, the spec looses the point IMO",
+              "createdAt": "2026-01-05T14:05:16Z",
+              "updatedAt": "2026-01-05T14:05:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87YL1C4",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "dpostnikov",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-05T14:05:53Z",
+          "updatedAt": "2026-01-05T14:05:53Z",
+          "comments": [
+            {
+              "originalPosition": 47,
+              "body": "I wanted it as a separate spec first too",
+              "createdAt": "2026-01-05T14:05:53Z",
+              "updatedAt": "2026-01-05T14:05:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87YL2yN",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "dpostnikov",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-05T14:07:06Z",
+          "updatedAt": "2026-01-05T14:07:06Z",
+          "comments": [
+            {
+              "originalPosition": 47,
+              "body": "But then I warmed up to your suggestion and thought of defining key elements here, but not prescribing the way to transfer or resolve them here",
+              "createdAt": "2026-01-05T14:07:06Z",
+              "updatedAt": "2026-01-05T14:07:06Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

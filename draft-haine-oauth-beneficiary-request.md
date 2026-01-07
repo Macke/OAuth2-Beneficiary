@@ -63,7 +63,9 @@ TODO Terminology
 
 # Beneficiary ID
 
-Each beneficiary shall be uniquely identified in the ecosystem by a unique identifier following the client ID scheme as described in [CLIENT_ID_SCHEME]. This identifier shall be unique within the ecosystem and should be unique globally.
+Each beneficiary shall be uniquely identified in the ecosystem by a unique identifier (beneficiary_id). This identifier shall be unique within the ecosystem and should be unique globally.
+
+beneficiary_id should follow the client ID scheme as described in [CLIENT_ID_SCHEME]. 
 
 # Beneficiary metadata
 

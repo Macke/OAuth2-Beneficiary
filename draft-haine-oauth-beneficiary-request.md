@@ -12,8 +12,7 @@ keyword:
  - intermediary
 
 author:
- -
-    fullname: Mark Haine
+  - fullname: Mark Haine
     organization: Select ID Ltd
     email: mark.haine@selectid.co.uk
 
@@ -21,8 +20,8 @@ normative:
   RFC6749:
   RFC7591:
   Client-ID-Scheme:
-    title: "Client-ID-Scheme"
-    date: 2022-03-28
+    title: "OAuth 2.0 Client ID Scheme"
+    date: 2025-08-11
     target: https://www.ietf.org/archive/id/draft-parecki-oauth-client-id-scheme-01.txt
     author:
       - name: Aaron Parecki

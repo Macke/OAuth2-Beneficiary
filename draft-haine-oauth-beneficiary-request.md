@@ -73,19 +73,15 @@ The following metadata can be defined for each beneficiary.
 
 Metadata can be transmitted during the request or fetched outside it, depending on the requirements of each particular ecosystem.
 
-| # | Metadata field name    | Mandatory | Description                                                                                                 |
-| 1 | beneficiary_id         | Y         | Unique identifier as defined in [CLIENT_ID_SCHEME]                                                          |
-| 2 | beneficiary_name       | N         | Name of the beneficiary as defined for client_name in [RFC7591]                                             | 
-| 3 | beneficiary_uri        | N         | URL string of a web page providing information about the beneficiary as defined for client_uri in [RFC7591] | 
-| 4 | beneficiary_logo_uri   | N         | URL string that references a logo for the beneficiary as defined for logo_uri in [RFC7591]                  | 
-| 5 | beneficiary_tos_uri    | N         | URL string that points to a human-readable terms of service as defined for tos_uri in [RFC7591]             | 
-| 6 | beneficiary_policy_uri | N         | URL string that points to a human-readable privacy policy document as defined for policy_uri in [RFC7591]   | 
-| 7 | beneficiary_contacts   | N         | Array of strings representing ways to contact people responsible for this beneficiary as defined for contacts in [RFC7591]    | 
-| 8 | beneficiary_purpose    | N         | Human-readable purpose string as defined in TBD draft                                                       | 
- 
-description TBC is it covered by beneficiary_uri?
-
-GDPR_type is it covered by beneficiary_policy_uri?
+| # | Metadata field name    | Mandatory | Description                                                                                                  |
+| 1 | beneficiary_id         | Y         | Unique identifier as defined in [CLIENT_ID_SCHEME].                                                          |
+| 2 | beneficiary_name       | N         | Name of the beneficiary as defined for client_name in [RFC7591].                                             | 
+| 3 | beneficiary_uri        | N         | URL string of a web page providing information about the beneficiary as defined for client_uri in [RFC7591]. | 
+| 4 | beneficiary_logo_uri   | N         | URL string that references a logo for the beneficiary as defined for logo_uri in [RFC7591].                  | 
+| 5 | beneficiary_tos_uri    | N         | URL string that points to a human-readable terms of service as defined for tos_uri in [RFC7591].             | 
+| 6 | beneficiary_policy_uri | N         | URL string that points to a human-readable privacy policy document as defined for policy_uri in [RFC7591].   | 
+| 7 | beneficiary_contacts   | N         | Array of strings representing ways to contact people responsible for this beneficiary as defined for contacts in [RFC7591].    |   
+| 8 | beneficiary_role       | N         | Array of strings representing different roles beneficiaries could play in an ecosystem (e.g.: "GDRP_CONTROLLER"). This will be defined at an ecosystem level. |   
 
 # Beneficiary Request
 

@@ -50,9 +50,7 @@ that will have access to their data after the client authorizes it.
 This specification extends {{RFC6749}} to define a parameter that identifies
 the additional parties that receive data provided by an OAuth transaction. There may be multiple parties, and optional mechanisms exist to determine metadata and the validity of those additional parties.
 
-This specification also defines the requirements of the OAuth authorization server
-to present this information about the additional parties in the OAuth consent screen
-during an OAuth transaction.
+This specification also defines the requirements that the Authorization server should meet to present this information to the end user to facilitate informed consent.
 
 
 # Conventions and Definitions

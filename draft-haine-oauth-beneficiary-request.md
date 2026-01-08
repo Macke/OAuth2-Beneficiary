@@ -75,7 +75,6 @@ The following metadata can be defined for each beneficiary.
 Metadata can be transmitted during the request or fetched outside it, depending on the requirements of each particular ecosystem.
 
 | # | Metadata field name    | Mandatory | Description                                                                                                  |
-=======
 | - | ---------------------- | --------- | ------------------------------------------------------------------------------------------------------------ |
 | 1 | beneficiary_id         | Y         | Unique identifier as defined in [Client-ID-Scheme].                                                       |
 | 2 | beneficiary_name       | N         | Name of the beneficiary as defined for client_name in [RFC7591].                                             | 

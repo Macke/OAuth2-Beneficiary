@@ -12,19 +12,20 @@ keyword:
  - intermediary
 
 author:
- -
-    fullname: Mark Haine
+  - fullname: Mark Haine
     organization: Select ID Ltd
     email: mark.haine@selectid.co.uk
 
 normative:
   RFC6749:
-
-  CLIENT_ID_SCHEME: https://www.ietf.org/archive/id/draft-parecki-oauth-client-id-scheme-01.txt
-
-  RFC7591: OAuth 2.0 Dynamic Client Registration Protocol https://datatracker.ietf.org/doc/html/rfc7591
-
-
+  RFC7591:
+  Client-ID-Scheme:
+    title: "OAuth 2.0 Client ID Scheme"
+    date: 2025-08-11
+    target: https://www.ietf.org/archive/id/draft-parecki-oauth-client-id-scheme-01.txt
+    author:
+      - name: Aaron Parecki
+        org: Okta
 
 informative:
 
@@ -65,7 +66,7 @@ TODO Terminology
 
 Each beneficiary shall be uniquely identified in the ecosystem by a unique identifier (beneficiary_id). This identifier shall be unique within the ecosystem and should be unique globally.
 
-beneficiary_id should follow the client ID scheme as described in [CLIENT_ID_SCHEME]. 
+beneficiary_id should follow the client ID scheme as described in [Client-ID-Scheme]. 
 
 # Beneficiary metadata
 
@@ -74,8 +75,9 @@ The following metadata can be defined for each beneficiary.
 Metadata can be transmitted during the request or fetched outside it, depending on the requirements of each particular ecosystem.
 
 | # | Metadata field name    | Mandatory | Description                                                                                                  |
+=======
 | - | ---------------------- | --------- | ------------------------------------------------------------------------------------------------------------ |
-| 1 | beneficiary_id         | Y         | Unique identifier as defined in [CLIENT_ID_SCHEME].                                                          |
+| 1 | beneficiary_id         | Y         | Unique identifier as defined in [Client-ID-Scheme].                                                       |
 | 2 | beneficiary_name       | N         | Name of the beneficiary as defined for client_name in [RFC7591].                                             | 
 | 3 | beneficiary_uri        | N         | URL string of a web page providing information about the beneficiary as defined for client_uri in [RFC7591]. | 
 | 4 | beneficiary_logo_uri   | N         | URL string that references a logo for the beneficiary as defined for logo_uri in [RFC7591].                  | 

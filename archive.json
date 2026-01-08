@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-06T00:56:12.439047+00:00",
+  "timestamp": "2026-01-08T00:56:15.975486+00:00",
   "repo": "Macke/OAuth2-Beneficiary",
   "labels": [
     {
@@ -98,24 +98,26 @@
       "id": "PR_kwDOQz-Zj867iTe0",
       "title": "Add metadata table",
       "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dpostnikov",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-01-05T13:41:30Z",
-      "updatedAt": "2026-01-05T14:07:06Z",
+      "updatedAt": "2026-01-07T21:10:56Z",
       "baseRepository": "Macke/OAuth2-Beneficiary",
       "baseRefName": "main",
       "baseRefOid": "b043fda5cc2037a734505c60c61c2e5e3fe534c3",
       "headRepository": "Macke/OAuth2-Beneficiary",
       "headRefName": "dpostnikov-patch-2",
-      "headRefOid": "6fec3b4985979c0bda9d602eb871593d144ca17a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "b0cd9ad0eb314626d6cc00af3732b0d81fd921bc",
+      "closedAt": "2026-01-07T21:10:56Z",
+      "mergedAt": "2026-01-07T21:10:56Z",
+      "mergedBy": "Macke",
+      "mergeCommit": {
+        "oid": "d63559ba99f2077144a8307c0b535681ccc38341"
+      },
       "comments": [],
       "reviews": [
         {
@@ -257,8 +259,113 @@
               "updatedAt": "2026-01-05T14:07:06Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87Yrc1d",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-07T14:52:09Z",
+          "updatedAt": "2026-01-07T14:52:09Z",
+          "comments": [
+            {
+              "originalPosition": 43,
+              "body": "I wasn't sufficiently clear - I think there may be cases where trusting the OAuth2 client (not beneficiary or Intermediary) will be enough.  So there would be no need for the beneficiary and or any intermediaries to be resolvable.  Implementations and ecosystems don't always have to solve that problem with technology - it could be based on contractual obligation between OAuth2 client and AZ and we should leave that option open.\r\n",
+              "createdAt": "2026-01-07T14:52:09Z",
+              "updatedAt": "2026-01-07T14:52:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87Yrgm7",
+          "commit": {
+            "abbreviatedOid": "6fec3b4"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-01-07T14:55:08Z",
+          "updatedAt": "2026-01-07T14:55:08Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "it's subtle but I think your new wording implies requirements that the AZ has for other parties whereas the original wording is requrements that the AZ itself should meet - maybe this very conversation suggests that is is ambiguous and we shoudl do a bigger re-word to address that ambiguity",
+              "createdAt": "2026-01-07T14:55:08Z",
+              "updatedAt": "2026-01-07T14:55:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOQz-Zj87YxXSm",
+          "commit": {
+            "abbreviatedOid": "b0cd9ad"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-01-07T21:10:48Z",
+          "updatedAt": "2026-01-07T21:10:48Z",
+          "comments": []
         }
       ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOQz-Zj867_h1d",
+      "title": "Format the table",
+      "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/3",
+      "state": "OPEN",
+      "author": "dpostnikov",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-07T21:18:19Z",
+      "updatedAt": "2026-01-07T21:18:19Z",
+      "baseRepository": "Macke/OAuth2-Beneficiary",
+      "baseRefName": "main",
+      "baseRefOid": "d63559ba99f2077144a8307c0b535681ccc38341",
+      "headRepository": "Macke/OAuth2-Beneficiary",
+      "headRefName": "dpostnikov-patch-3",
+      "headRefOid": "43e6d921b477a75efc3913864969abfeb7000333",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOQz-Zj867_pW6",
+      "title": "Update references",
+      "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/4",
+      "state": "OPEN",
+      "author": "dpostnikov",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-07T21:31:59Z",
+      "updatedAt": "2026-01-07T21:38:11Z",
+      "baseRepository": "Macke/OAuth2-Beneficiary",
+      "baseRefName": "main",
+      "baseRefOid": "d63559ba99f2077144a8307c0b535681ccc38341",
+      "headRepository": "Macke/OAuth2-Beneficiary",
+      "headRefName": "dpostnikov-patch-4",
+      "headRefOid": "8f334cf0340b239b3b3870ce08290ebc30c490ff",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }

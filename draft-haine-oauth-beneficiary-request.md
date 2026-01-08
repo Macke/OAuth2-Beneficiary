@@ -93,7 +93,7 @@ Each beneficiary shall be uniquely identified in the ecosystem by a unique ident
 
 
 
-# Beneficiary Request
+# Beneficiary Request {#BENEFICIARY}
 
 TODO Beneficiary Request
 
@@ -114,6 +114,7 @@ Note: Each ecosystem defines its own entity resolution and trust resolution rule
 ```
 
 ## Example 2
+In this example there are two `beneficiaries` the first of which is an intermediary which in turn has one beneficiary "1234" that it passes data to.  In this case the intermediary entity metadata can be discovered and trused via an OpenID Federation endpoint and the end beneficiary ("1234") uses an "embedded metadata" mechanism.
 
 ```
 {
@@ -122,18 +123,21 @@ Note: Each ecosystem defines its own entity resolution and trust resolution rule
             "beneficiary_id": "https://intermediary-one.co.uk",
             "discovery_method": "OIDFed",
             "uri": "https://intermediary-one.co.uk/federationendpoint"
+            "beneficiaries": [
+              {
+                "beneficiary_id": "1234",
+                "discovery_method": "embedded",
+                "name": "TheBestController",
+                "description": "Hello World",
+                "purpose": "marketing",
+                "uri": "https://thebestcontroller.com",
+                "logo_uri": "https://thebestcontroller.com/tbclogo.svg",
+                "contacts": ["dpo@thebestcontroller.com"],
+                "GDPR_type": "processor|controller"
+              }
+            ]
         }
-        {
-            "beneficiary_id": "1234",
-            "discovery_method": "embedded",
-            "name": "TheBestController",
-            "description": "Hello World",
-            "purpose": "marketing",
-            "uri": "https://thebestcontroller.com",
-            "logo_uri": "https://thebestcontroller.com/tbclogo.svg",
-            "contacts": ["dpo@thebestcontroller.com"],
-            "GDPR_type": "processor|controller"
-        },
+
 
     ]
 }
@@ -162,10 +166,17 @@ Metadata can be transmitted during the request or fetched outside it, depending 
 TODO Security
 
 
-# IANA Considerations
+# IANA Considerations {#IANA}
 
-TODO IANA Considerations
+This specification registers `urn:ietf:params:oauth:token-type:beneficiaries` in the "OAuth Parameters" subregistry of the "OAuth Parameters" {{IANA.OAuth.Parameters}} registry.
 
+## OAuth URI Subregistry Contents
+
+* URN: urn:ietf:params:oauth:token-type:beneficiaries
+  * Common Name: Beneficiaries object
+  * Parameter Usage Location: client-rs request
+  * Change Controller: IETF
+  * Specification Document Section {{beneficiaries}} of this specification
 
 --- back
 

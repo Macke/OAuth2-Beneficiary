@@ -18,7 +18,21 @@ author:
 
 normative:
   RFC6749:
+    title: "The OAuth 2.0 Authorization Framework"
+    date: October 2012
+    target: https://www.rfc-editor.org/info/rfc6749
+    author:
+      - name: Hardt, D.
   RFC7591:
+    title: "OAuth 2.0 Dynamic Client Registration Protocol"
+    date: July 2015
+    target: https://www.rfc-editor.org/info/rfc7591
+    author:
+      - name: Richer, J.
+      - name: Jones, M.
+      - name: Bradley, J.
+      - name: Machulak, M.
+      - name: P. Hunt
   Client-ID-Scheme:
     title: "OAuth 2.0 Client ID Scheme"
     date: 2025-08-11
@@ -41,15 +55,15 @@ beneficial recipients of the data returned by an OAuth transaction, and optional
 # Introduction
 
 In some applications of OAuth 2.0, there may be multiple legal entities that have access
-to or process data returned by an Authorization Server. In "The OAuth 2.0 Authorization Framework",
+to or process data returned by an Authorization Server. In "The OAuth 2.0 Authorization Framework" [RFC6749],
 a `client_id` represents only a single application, and so the OAuth consent screen
-lists just one third party: the OAuth client.
+lists just one third party: the OAuth client provider.
 
-In this situation, to comply with various local laws and regulations, the user needs to be informed by the authorization server of the list of entities
+In this situation, to comply with various local laws and regulations, the user may need to be informed by the authorization server of the list of entities
 that will have access to their data after the client authorizes it.
 
-This specification extends {{RFC6749}} to define a parameter that identifies
-the additional parties that receive data provided by an OAuth transaction. There may be multiple parties, and optional mechanisms exist to determine metadata and the validity of those additional parties.
+This specification extends [RFC6749] to define a parameter that describes
+the additional (potentially multiple) parties that will have data shared with them that is authorised via the OAuth transaction. Optional mechanisms are provided to determine metadata and the validity of those additional parties.
 
 This specification also defines the requirements that the Authorization server should meet to present this information to the end user to facilitate informed consent.
 
@@ -60,13 +74,22 @@ This specification also defines the requirements that the Authorization server s
 
 # Terminology
 
-TODO Terminology
+__TODO Terminology__
+
+* Beneficiary
+
+* Intermediary
+
+* Client
+
+
+
 
 # Beneficiary ID
 
-Each beneficiary shall be uniquely identified in the ecosystem by a unique identifier (beneficiary_id). This identifier shall be unique within the ecosystem and should be unique globally.
+Each beneficiary shall be uniquely identified in the ecosystem by a unique identifier `beneficiary_id`. This identifier shall be unique within the ecosystem and should be unique globally.
 
-beneficiary_id should follow the client ID scheme as described in [Client-ID-Scheme]. 
+`beneficiary_id` should follow the client ID scheme as described in [Client-ID-Scheme]. 
 
 
 
@@ -75,7 +98,7 @@ beneficiary_id should follow the client ID scheme as described in [Client-ID-Sch
 TODO Beneficiary Request
 
 ## Example 1. OpenID Federation beneficiary ecosystem.
-In this example, beneficiary_id points to the entity configuration that the Authorization Server can resolve.
+In this example, `beneficiary_id` points to the entity configuration that the Authorization Server can resolve.
 
 Note: Each ecosystem defines its own entity resolution and trust resolution rules, which are out of scope for this specification.
 
@@ -83,7 +106,8 @@ Note: Each ecosystem defines its own entity resolution and trust resolution rule
 {
     "beneficiaries": [
         {
-            "beneficiary_id": "openid_federation:https://www.trust_anchor.org/entity/1234"
+            "beneficiary_id": "openid_federation:https://www.trust_anchor.org/entity/1234",
+            "discovery_method": "OIDFed"
         }
    ]
 }
@@ -93,9 +117,14 @@ Note: Each ecosystem defines its own entity resolution and trust resolution rule
 
 ```
 {
-    "dataRecipients": [
+    "beneficiaries": [
         {
-            "RecipientID": "1234",
+            "beneficiary_id": "https://intermediary-one.co.uk",
+            "discovery_method": "OIDFed",
+            "uri": "https://intermediary-one.co.uk/federationendpoint"
+        }
+        {
+            "beneficiary_id": "1234",
             "discovery_method": "embedded",
             "name": "TheBestController",
             "description": "Hello World",
@@ -105,11 +134,7 @@ Note: Each ecosystem defines its own entity resolution and trust resolution rule
             "contacts": ["dpo@thebestcontroller.com"],
             "GDPR_type": "processor|controller"
         },
-        {
-            "RecipientID": "https://intermediary-one.co.uk",
-            "discovery_method": "OIDFed",
-            "uri": "https://intermediary-one.co.uk/federationendpoint"
-        }
+
     ]
 }
 ```

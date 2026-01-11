@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-08T00:56:15.975486+00:00",
+  "timestamp": "2026-01-11T01:01:56.941747+00:00",
   "repo": "Macke/OAuth2-Beneficiary",
   "labels": [
     {
@@ -320,52 +320,126 @@
       "id": "PR_kwDOQz-Zj867_h1d",
       "title": "Format the table",
       "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/3",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dpostnikov",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-01-07T21:18:19Z",
-      "updatedAt": "2026-01-07T21:18:19Z",
+      "updatedAt": "2026-01-08T11:20:08Z",
       "baseRepository": "Macke/OAuth2-Beneficiary",
       "baseRefName": "main",
       "baseRefOid": "d63559ba99f2077144a8307c0b535681ccc38341",
       "headRepository": "Macke/OAuth2-Beneficiary",
       "headRefName": "dpostnikov-patch-3",
       "headRefOid": "43e6d921b477a75efc3913864969abfeb7000333",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-01-08T11:20:08Z",
+      "mergedAt": "2026-01-08T11:20:07Z",
+      "mergedBy": "Macke",
+      "mergeCommit": {
+        "oid": "7ae89eeea2f9258bd8be840c1695d799e8047c54"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOQz-Zj87Y5hWr",
+          "commit": {
+            "abbreviatedOid": "43e6d92"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-01-08T11:20:01Z",
+          "updatedAt": "2026-01-08T11:20:01Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 4,
       "id": "PR_kwDOQz-Zj867_pW6",
       "title": "Update references",
       "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "dpostnikov",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-01-07T21:31:59Z",
-      "updatedAt": "2026-01-07T21:38:11Z",
+      "updatedAt": "2026-01-08T11:27:07Z",
       "baseRepository": "Macke/OAuth2-Beneficiary",
       "baseRefName": "main",
-      "baseRefOid": "d63559ba99f2077144a8307c0b535681ccc38341",
+      "baseRefOid": "7ae89eeea2f9258bd8be840c1695d799e8047c54",
       "headRepository": "Macke/OAuth2-Beneficiary",
       "headRefName": "dpostnikov-patch-4",
-      "headRefOid": "8f334cf0340b239b3b3870ce08290ebc30c490ff",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "0fdf114a730e7226285cb08160e2b568f9242411",
+      "closedAt": "2026-01-08T11:27:07Z",
+      "mergedAt": "2026-01-08T11:27:07Z",
+      "mergedBy": "Macke",
+      "mergeCommit": {
+        "oid": "ecf4d6728fc83044998a83e0cf484baf5c256b67"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOQz-Zj87Y5iJc",
+          "commit": {
+            "abbreviatedOid": "8f334cf"
+          },
+          "author": "Macke",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-01-08T11:21:03Z",
+          "updatedAt": "2026-01-08T11:21:03Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOQz-Zj868KJoO",
+      "title": "Meh patch 1",
+      "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/5",
+      "state": "MERGED",
+      "author": "Macke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-08T16:44:11Z",
+      "updatedAt": "2026-01-09T13:51:10Z",
+      "baseRepository": "Macke/OAuth2-Beneficiary",
+      "baseRefName": "main",
+      "baseRefOid": "10ed8ef48b2be30dcfa19a01163410152884977f",
+      "headRepository": "Macke/OAuth2-Beneficiary",
+      "headRefName": "meh-patch-1",
+      "headRefOid": "bf06acd8ad1d034b6aec2795142e0c619aba39da",
+      "closedAt": "2026-01-09T13:51:10Z",
+      "mergedAt": "2026-01-09T13:51:09Z",
+      "mergedBy": "Macke",
+      "mergeCommit": {
+        "oid": "a2fa0db32f5ae712fc0c74f86e49b02ec132abeb"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOQz-Zj87ZIOw0",
+          "commit": {
+            "abbreviatedOid": "bf06acd"
+          },
+          "author": "dpostnikov",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Meh",
+          "createdAt": "2026-01-09T08:06:19Z",
+          "updatedAt": "2026-01-09T08:06:19Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }

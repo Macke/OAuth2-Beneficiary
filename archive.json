@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-01-29T01:05:00.707319+00:00",
+  "timestamp": "2026-02-01T01:16:42.434954+00:00",
   "repo": "Macke/OAuth2-Beneficiary",
   "labels": [
     {
@@ -440,6 +440,34 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOQz-Zj87AbMZp",
+      "title": "Added screenshot diagram",
+      "url": "https://github.com/Macke/OAuth2-Beneficiary/pull/6",
+      "state": "MERGED",
+      "author": "Macke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-01-30T15:51:29Z",
+      "updatedAt": "2026-01-30T15:52:03Z",
+      "baseRepository": "Macke/OAuth2-Beneficiary",
+      "baseRefName": "main",
+      "baseRefOid": "a2fa0db32f5ae712fc0c74f86e49b02ec132abeb",
+      "headRepository": "Macke/OAuth2-Beneficiary",
+      "headRefName": "meh-patch-1",
+      "headRefOid": "220e3f04cbe665e0282d945433ed446bb85df452",
+      "closedAt": "2026-01-30T15:52:03Z",
+      "mergedAt": "2026-01-30T15:52:03Z",
+      "mergedBy": "Macke",
+      "mergeCommit": {
+        "oid": "3a9ff018ef6cc058a410765f94cfb46f70717616"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }

@@ -1,21 +1,24 @@
 ---
-title: "OAuth 2.0 Beneficiary Request"
+abbrev: OAuth Bene
+area: "Security"
+author:
+  - email: mark.haine@selectid.co.uk
+    ins: M. Haine
+    name: Mark Haine
+    organization: Select ID Ltd
 category: info
-
-docname: draft-haine-oauth-beneficiary-request
-submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
-number:
-date: 2026-01-05
-area: OAuth
+docname: draft-haine-oauth-beneficiary-request-latest
+ipr: 
 keyword:
  - beneficiary
  - intermediary
-
-author:
-  - fullname: Mark Haine
-    organization: Select ID Ltd
-    email: mark.haine@selectid.co.uk
-
+ - request
+stand_alone: 'yes'
+submissiontype: IETF
+workgroup: "Web Authorization Protocol"
+title: OAuth 2.0 Beneficiary Request Parameter
+number:
+date: 2026-01-05
 normative:
   RFC6749:
     title: "The OAuth 2.0 Authorization Framework"
@@ -40,32 +43,48 @@ normative:
     author:
       - name: Aaron Parecki
         org: Okta
-
 informative:
-
-...
+  OpenID.Core:
+    author:
+    - ins: N. Sakimura
+      name: Nat Sakimura
+    - ins: J. Bradley
+      name: John Bradley
+    - ins: M. Jones
+      name: Michael B. Jones
+    - ins: B. de Medeiros
+      name: Breno de Medeiros
+    - ins: C. Mortimore
+      name: Chuck Mortimore
+    date: December 2023
+    target: https://openid.net/specs/openid-connect-core-1_0.html
+    title: OpenID Connect Core 1.0 incorporating errata set 2
 
 --- abstract
 
-This specification defines a mechanism for including information about
-beneficial recipients of the data returned by an OAuth transaction, and optionally intermediaries, by adding a new request parameter to OAuth 2.0.
+An Authorization Server authorizes a Client to access data and may also pass claims about the end user via OpenID Connect.  This data is provided to the Client application.  In many implementations this Client application will not be operated by the legal entity that will ultimately receive and process that data for the benefit of the end-user and/or the eventual data recipient
+This specification describes a mechanism for including information about intermediate data oprocessors and beneficial recipients of the data authorized by an OAuth transaction (or presented via any additional mechanism such as OpenID Connect) by adding a new request parameter to OAuth 2.0.
 
 --- middle
 
-# Introduction
+# Introduction {#introduction}
 
-In some applications of OAuth 2.0, there may be multiple legal entities that have access
-to or process data returned by an Authorization Server. In "The OAuth 2.0 Authorization Framework" [RFC6749],
-a `client_id` represents only a single application, and so the OAuth consent screen
-lists just one third party: the OAuth client provider.
+In some applications of OAuth 2.0, there may be multiple legal entities that have access to or process data returned by an Authorization Server. In "The OAuth 2.0 Authorization Framework" [RFC6749], a `client_id` represents only a single application, and so the OAuth consent screen lists just one third party: the OAuth client provider.
 
-In this situation, to comply with various local laws and regulations, the user may need to be informed by the authorization server of the list of entities
-that will have access to their data after the client authorizes it.
+In this situation, either to be open with the end user or to comply with various local laws and regulations, it may be appropriate forthe authorization server to inform the end user of some or all of the of the list of entities that will have access to their data after the client has received authorization.
 
 This specification extends [RFC6749] to define a parameter that describes
-the additional (potentially multiple) parties that will have data shared with them that is authorised via the OAuth transaction. Optional mechanisms are provided to determine metadata and the validity of those additional parties.
+the additional (potentially multiple) parties that will have data shared with them as a result of authorizing the OAuth transaction. Optional mechanisms are provided to determine metadata and the validity of those additional parties.
 
 This specification also defines the requirements that the Authorization server should meet to present this information to the end user to facilitate informed consent.
+
+## Target Audience {#target-audience}
+
+ The intended audiences of this document are:
+
+ * Implementers of OAuth 2.0 Authorization servers and clients,
+
+ * Solution architects of business solutions that need to convey the intermediaries and eventual beneficial recipients of data accessible as a result of an OAuth 2.0 authorization.
 
 
 # Conventions and Definitions
@@ -181,7 +200,19 @@ This specification registers `urn:ietf:params:oauth:token-type:beneficiaries` in
 --- back
 
 # Acknowledgments
-{:numbered="false"}
+
+The author would like to thank 
+Aaron Parecki, 
+Jan Vereecken, 
+and 
+Joseph Heenan 
+for their initial contributions of the concepts behind this specification. The author would also like to thank XXXXXXXX for their reviews of this specification. Additionally the work of the OAuth Working Group on the referenced and related specifications that this specification builds upon is much appreciated.
 
 
-The author would like to thank Aaron Parecki, Jan Vereecken, and Joseph Heenan for their initial contributions of the concepts behind this specification. The author would also like to thank XXXXXXXX for their reviews of this specification. Additionally the work of the OAuth Working Group on the referenced and related specifications that this specification builds upon is much appreciated.
+# Document History
+
+[[Note to RFC Editor: please remove before publication.]]
+
+## draft-haine-oauth-beneficiary-request-latest-00
+
+* Initial version

@@ -21,21 +21,7 @@ number:
 date: 2026-01-05
 normative:
   RFC6749:
-    title: "The OAuth 2.0 Authorization Framework"
-    date: October 2012
-    target: https://www.rfc-editor.org/info/rfc6749
-    author:
-      - name: Hardt, D.
   RFC7591:
-    title: "OAuth 2.0 Dynamic Client Registration Protocol"
-    date: July 2015
-    target: https://www.rfc-editor.org/info/rfc7591
-    author:
-      - name: Richer, J.
-      - name: Jones, M.
-      - name: Bradley, J.
-      - name: Machulak, M.
-      - name: P. Hunt
   Client-ID-Scheme:
     title: "OAuth 2.0 Client ID Scheme"
     date: 2025-08-11

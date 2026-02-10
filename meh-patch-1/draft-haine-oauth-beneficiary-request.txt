@@ -1,0 +1,325 @@
+
+
+
+
+Web Authorization Protocol                                      M. Haine
+Internet-Draft                                             Select ID Ltd
+Intended status: Informational                            5 January 2026
+Expires: 9 July 2026
+
+
+                OAuth 2.0 Beneficiary Request Parameter
+              draft-haine-oauth-beneficiary-request-latest
+
+Abstract
+
+   An Authorization Server authorizes a Client to access data and may
+   also pass claims about the end user via OpenID Connect.  This data is
+   provided to the Client application.  In many implementations this
+   Client application will not be operated by the legal entity that will
+   ultimately receive and process that data for the benefit of the end-
+   user and/or the eventual data recipient This specification describes
+   a mechanism for including information about intermediate data
+   oprocessors and beneficial recipients of the data authorized by an
+   OAuth transaction (or presented via any additional mechanism such as
+   OpenID Connect) by adding a new request parameter to OAuth 2.0.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 9 July 2026.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+     1.1.  Target Audience
+   2.  Conventions and Definitions
+   3.  Terminology
+   4.  Beneficiary ID
+   5.  Beneficiaries Request
+     5.1.  Example 1.  OpenID Federation beneficiary ecosystem.
+     5.2.  Example 2
+   6.  Beneficiary metadata
+   7.  Privacy Considerations
+   8.  Security Considerations
+   9.  IANA Considerations
+     9.1.  "beneficiaries" Parameter registration
+   10. References
+     10.1.  Normative References
+     10.2.  Informative References
+   Appendix A.  Acknowledgments
+   Appendix B.  Document History
+     B.1.  draft-haine-oauth-beneficiary-request-latest-00
+   Author's Address
+
+1.  Introduction
+
+   In some applications of OAuth 2.0, there may be multiple legal
+   entities that have access to or process data returned by an
+   Authorization Server.  In "The OAuth 2.0 Authorization Framework"
+   [RFC6749], a client_id represents only a single application, and so
+   the OAuth consent screen lists just one third party - the name of the
+   OAuth client name usually derived from some clinet metadata.
+
+   In this situation, either to be open with the end user or to comply
+   with various local laws and regulations, it may be appropriate for
+   the authorization server to inform the end-user of some or all of the
+   of the list of entities that will have access to their data after the
+   client has received authorization.
+
+   This specification extends [RFC6749] to define a parameter that
+   describes the additional (potentially multiple) parties that will
+   have data shared with them as a result of authorizing the OAuth
+   transaction.  Optional mechanisms are provided to determine metadata
+   and the validity of those additional parties.
+
+   This specification also defines the requirements that the
+   Authorization server should meet to present this information to the
+   end user to facilitate informed consent.
+
+1.1.  Target Audience
+
+   The intended audiences of this document are:
+
+   *  Implementers of OAuth 2.0 Authorization servers and clients,
+
+   *  Solution architects of business solutions that need to convey the
+      intermediaries and eventual beneficial recipients of data
+      accessible as a result of an OAuth 2.0 authorization.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  Terminology
+
+   *TODO Terminology*
+
+   *  Beneficiary
+
+   *  Intermediary
+
+   *  Client
+
+4.  Beneficiary ID
+
+   Each beneficiary shall be uniquely identified in the ecosystem by a
+   unique identifier beneficiary_id.  This identifier shall be unique
+   within the ecosystem and should be unique globally.
+
+   beneficiary_id should follow the client ID scheme as described in
+   [Client-ID-Scheme].
+
+5.  Beneficiaries Request
+
+   TODO Beneficiaries Request
+
+5.1.  Example 1.  OpenID Federation beneficiary ecosystem.
+
+   In this example, beneficiary_id points to the entity configuration
+   that the Authorization Server can resolve.
+
+   Note: Each ecosystem defines its own entity resolution and trust
+   resolution rules, which are out of scope for this specification.
+
+   { "beneficiaries": [ { "beneficiary_id":
+   "openid_federation:https://www.trust_anchor.org/entity/1234",
+   "discovery_method": "OIDFed" } ] }
+
+5.2.  Example 2
+
+   In this example there are two "beneficiaries" the first of which is
+   an intermediary which in turn has one beneficiary "1234" that it
+   passes data to.  In this case the intermediary entity metadata can be
+   discovered and trused via an OpenID Federation endpoint and the end
+   beneficiary ("1234") uses an "embedded metadata" mechanism.
+
+   { "beneficiaries": [ { "beneficiary_id": "https://intermediary-
+   one.co.uk", "discovery_method": "OIDFed", "uri":
+   "https://intermediary-one.co.uk/federationendpoint" "beneficiaries":
+   [ { "beneficiary_id": "1234", "discovery_method": "embedded", "name":
+   "TheBestController", "description": "Hello World", "purpose":
+   "marketing", "uri": "https://thebestcontroller.com", "logo_uri":
+   "https://thebestcontroller.com/tbclogo.svg", "contacts":
+   ["dpo@thebestcontroller.com"], "GDPR_type": "processor|controller" }
+   ] }
+
+   ] }
+
+6.  Beneficiary metadata
+
+   The following metadata can be defined for each beneficiary.
+
+   Metadata can be transmitted during the request or fetched outside it,
+   depending on the requirements of each particular ecosystem.
+
+    +===+========================+===========+========================+
+    | # | Metadata field name    | Mandatory | Description            |
+    +===+========================+===========+========================+
+    | 1 | beneficiary_id         | Y         | Unique identifier as   |
+    |   |                        |           | defined in             |
+    |   |                        |           | [Client-ID-Scheme].    |
+    +---+------------------------+-----------+------------------------+
+    | 2 | beneficiary_name       | N         | Name of the            |
+    |   |                        |           | beneficiary as defined |
+    |   |                        |           | for client_name in     |
+    |   |                        |           | [RFC7591].             |
+    +---+------------------------+-----------+------------------------+
+    | 3 | beneficiary_uri        | N         | URL string of a web    |
+    |   |                        |           | page providing         |
+    |   |                        |           | information about the  |
+    |   |                        |           | beneficiary as defined |
+    |   |                        |           | for client_uri in      |
+    |   |                        |           | [RFC7591].             |
+    +---+------------------------+-----------+------------------------+
+    | 4 | beneficiary_logo_uri   | N         | URL string that        |
+    |   |                        |           | references a logo for  |
+    |   |                        |           | the beneficiary as     |
+    |   |                        |           | defined for logo_uri   |
+    |   |                        |           | in [RFC7591].          |
+    +---+------------------------+-----------+------------------------+
+    | 5 | beneficiary_tos_uri    | N         | URL string that points |
+    |   |                        |           | to a human-readable    |
+    |   |                        |           | terms of service as    |
+    |   |                        |           | defined for tos_uri in |
+    |   |                        |           | [RFC7591].             |
+    +---+------------------------+-----------+------------------------+
+    | 6 | beneficiary_policy_uri | N         | URL string that points |
+    |   |                        |           | to a human-readable    |
+    |   |                        |           | privacy policy         |
+    |   |                        |           | document as defined    |
+    |   |                        |           | for policy_uri in      |
+    |   |                        |           | [RFC7591].             |
+    +---+------------------------+-----------+------------------------+
+    | 7 | beneficiary_contacts   | N         | Array of strings       |
+    |   |                        |           | representing ways to   |
+    |   |                        |           | contact people         |
+    |   |                        |           | responsible for this   |
+    |   |                        |           | beneficiary as defined |
+    |   |                        |           | for contacts in        |
+    |   |                        |           | [RFC7591].             |
+    +---+------------------------+-----------+------------------------+
+    | 8 | beneficiary_role       | N         | Array of strings       |
+    |   |                        |           | representing different |
+    |   |                        |           | roles beneficiaries    |
+    |   |                        |           | could play in an       |
+    |   |                        |           | ecosystem (e.g.:       |
+    |   |                        |           | "GDRP_CONTROLLER").    |
+    |   |                        |           | This will be defined   |
+    |   |                        |           | at an ecosystem level. |
+    +---+------------------------+-----------+------------------------+
+
+                                  Table 1
+
+7.  Privacy Considerations
+
+   TODO Privacy
+
+8.  Security Considerations
+
+   TODO Security
+
+9.  IANA Considerations
+
+   This section registers one value, as listed in the subsection below,
+   in the IANA "OAuth Parameters" registry established by RFC 6749
+   [RFC6749].
+
+9.1.  "beneficiaries" Parameter registration
+
+   *  Name: beneficiaries
+
+   *  Parameter Usage Location: client-rs request
+
+   *  Change Controller: IETF
+
+   *  Specification Document Section *beneficiaries* of this
+      specification
+
+10.  References
+
+10.1.  Normative References
+
+   [RFC6749]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              RFC 6749, DOI 10.17487/RFC6749, October 2012,
+              <https://www.rfc-editor.org/rfc/rfc6749>.
+
+   [RFC7591]  Richer, J., Ed., Jones, M., Bradley, J., Machulak, M., and
+              P. Hunt, "OAuth 2.0 Dynamic Client Registration Protocol",
+              RFC 7591, DOI 10.17487/RFC7591, July 2015,
+              <https://www.rfc-editor.org/rfc/rfc7591>.
+
+   [Client-ID-Scheme]
+              Parecki, A., "OAuth 2.0 Client ID Scheme", 11 August 2025,
+              <https://www.ietf.org/archive/id/draft-parecki-oauth-
+              client-id-scheme-01.txt>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+10.2.  Informative References
+
+   [OpenID.Core]
+              Sakimura, N., Bradley, J., Jones, M., de Medeiros, B., and
+              C. Mortimore, "OpenID Connect Core 1.0 incorporating
+              errata set 2", December 2023,
+              <https://openid.net/specs/openid-connect-core-1_0.html>.
+
+Appendix A.  Acknowledgments
+
+   The author would like to thank Aaron Parecki, Jan Vereecken, and
+   Joseph Heenan for their initial contributions of the concepts behind
+   this specification.  The author would also like to thank XXXXXXXX for
+   their reviews of this specification.  Additionally the work of the
+   OAuth Working Group on the referenced and related specifications that
+   this specification builds upon is much appreciated.
+
+Appendix B.  Document History
+
+   [[Note to RFC Editor: please remove before publication.]]
+
+B.1.  draft-haine-oauth-beneficiary-request-latest-00
+
+   *  Initial version
+
+Author's Address
+
+   Mark Haine
+   Select ID Ltd
+   Email: mark.haine@selectid.co.uk

@@ -173,12 +173,13 @@ TODO Security
 
 # IANA Considerations {#IANA}
 
-This specification registers **something (the beneficiaries request parameter)** in the "OAuth Parameters" subregistry of the "OAuth Parameters" **OAuth-Parameters** registry.
+ This section registers one value, as listed in the subsection
+   below, in the IANA "OAuth Parameters" registry established by RFC
+   6749 [RFC6749].
 
-## OAuth URI Subregistry Contents
+## "beneficiaries" Parameter registration
 
-* URN: **something:beneficiaries**
-  * Common Name: Beneficiaries object
+  * Name: beneficiaries
   * Parameter Usage Location: client-rs request
   * Change Controller: IETF
   * Specification Document Section {{beneficiaries}} of this specification

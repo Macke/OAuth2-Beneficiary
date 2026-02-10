@@ -263,8 +263,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document Section *beneficiaries* of this
-      specification
+   *  Specification Document Section Section 5 of this specification
 
 10.  References
 

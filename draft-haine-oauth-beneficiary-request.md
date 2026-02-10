@@ -107,7 +107,7 @@ In this example, `beneficiary_id` points to the entity configuration that the Au
 
 Note: Each ecosystem defines its own entity resolution and trust resolution rules, which are out of scope for this specification.
 
-
+```
 {
     "beneficiaries": [
         {
@@ -116,10 +116,12 @@ Note: Each ecosystem defines its own entity resolution and trust resolution rule
         }
    ]
 }
+```
 
 ## Example 2
 In this example there are two "beneficiaries" the first of which is an intermediary which in turn has one beneficiary "1234" that it passes data to.  In this case the intermediary entity metadata can be discovered and trused via an OpenID Federation endpoint and the end beneficiary ("1234") uses an "embedded metadata" mechanism.
 
+```
 {
     "beneficiaries": [
         {
@@ -144,6 +146,7 @@ In this example there are two "beneficiaries" the first of which is an intermedi
 
     ]
 }
+```
 
 # Beneficiary metadata
 
@@ -182,7 +185,7 @@ TODO Security
   * Name: beneficiaries
   * Parameter Usage Location: client-rs request
   * Change Controller: IETF
-  * Specification Document Section {{beneficiaries}} of this specification
+  * Specification Document {{beneficiaries}} of this specification
 
 --- back
 

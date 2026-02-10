@@ -173,11 +173,11 @@ TODO Security
 
 # IANA Considerations {#IANA}
 
-This specification registers `urn:ietf:params:oauth:token-type:beneficiaries` in the "OAuth Parameters" subregistry of the "OAuth Parameters" {{IANA.OAuth.Parameters}} registry.
+This specification registers **something (the beneficiaries request parameter)** in the "OAuth Parameters" subregistry of the "OAuth Parameters" **OAuth-Parameters** registry.
 
 ## OAuth URI Subregistry Contents
 
-* URN: urn:ietf:params:oauth:token-type:beneficiaries
+* URN: **something:beneficiaries**
   * Common Name: Beneficiaries object
   * Parameter Usage Location: client-rs request
   * Change Controller: IETF

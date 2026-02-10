@@ -98,7 +98,7 @@ Each beneficiary shall be uniquely identified in the ecosystem by a unique ident
 
 
 
-# Beneficiaries Request {#beneficaries}
+# Beneficiaries Request {#beneficiaries}
 
 TODO Beneficiaries Request
 
@@ -182,7 +182,7 @@ TODO Security
   * Name: beneficiaries
   * Parameter Usage Location: client-rs request
   * Change Controller: IETF
-  * Specification Document Section **beneficiaries** of this specification
+  * Specification Document Section {{beneficiaries}} of this specification
 
 --- back
 

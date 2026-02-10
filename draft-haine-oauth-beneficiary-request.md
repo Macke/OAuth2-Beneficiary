@@ -98,9 +98,9 @@ Each beneficiary shall be uniquely identified in the ecosystem by a unique ident
 
 
 
-# Beneficiary Request {#BENEFICIARY}
+# Beneficiaries Request {#beneficaries}
 
-TODO Beneficiary Request
+TODO Beneficiaries Request
 
 ## Example 1. OpenID Federation beneficiary ecosystem.
 In this example, `beneficiary_id` points to the entity configuration that the Authorization Server can resolve.

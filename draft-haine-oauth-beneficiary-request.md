@@ -8,7 +8,7 @@ author:
     organization: Select ID Ltd
 category: info
 docname: draft-haine-oauth-beneficiary-request-latest
-ipr: 
+ipr: trust200902
 keyword:
  - beneficiary
  - intermediary
@@ -55,9 +55,9 @@ This specification describes a mechanism for including information about interme
 
 # Introduction {#introduction}
 
-In some applications of OAuth 2.0, there may be multiple legal entities that have access to or process data returned by an Authorization Server. In "The OAuth 2.0 Authorization Framework" [RFC6749], a `client_id` represents only a single application, and so the OAuth consent screen lists just one third party: the OAuth client provider.
+In some applications of OAuth 2.0, there may be multiple legal entities that have access to or process data returned by an Authorization Server. In "The OAuth 2.0 Authorization Framework" [RFC6749], a `client_id` represents only a single application, and so the OAuth consent screen lists just one third party - the name of the OAuth client name usually derived from some clinet metadata.
 
-In this situation, either to be open with the end user or to comply with various local laws and regulations, it may be appropriate forthe authorization server to inform the end user of some or all of the of the list of entities that will have access to their data after the client has received authorization.
+In this situation, either to be open with the end user or to comply with various local laws and regulations, it may be appropriate for the authorization server to inform the end-user of some or all of the of the list of entities that will have access to their data after the client has received authorization.
 
 This specification extends [RFC6749] to define a parameter that describes
 the additional (potentially multiple) parties that will have data shared with them as a result of authorizing the OAuth transaction. Optional mechanisms are provided to determine metadata and the validity of those additional parties.
@@ -161,6 +161,10 @@ Metadata can be transmitted during the request or fetched outside it, depending 
 | 6 | beneficiary_policy_uri | N         | URL string that points to a human-readable privacy policy document as defined for policy_uri in [RFC7591].   | 
 | 7 | beneficiary_contacts   | N         | Array of strings representing ways to contact people responsible for this beneficiary as defined for contacts in [RFC7591].    |   
 | 8 | beneficiary_role       | N         | Array of strings representing different roles beneficiaries could play in an ecosystem (e.g.: "GDRP_CONTROLLER"). This will be defined at an ecosystem level. |   
+
+# Privacy Considerations
+
+TODO Privacy
 
 # Security Considerations
 

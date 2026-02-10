@@ -164,7 +164,7 @@ Table of Contents
    discovered and trused via an OpenID Federation endpoint and the end
    beneficiary ("1234") uses an "embedded metadata" mechanism.
 
-   { "beneficiaries": [ { "beneficiary_id": "https://intermediary-
+   ``` { "beneficiaries": [ { "beneficiary_id": "https://intermediary-
    one.co.uk", "discovery_method": "OIDFed", "uri":
    "https://intermediary-one.co.uk/federationendpoint" "beneficiaries":
    [ { "beneficiary_id": "1234", "discovery_method": "embedded", "name":
@@ -174,7 +174,7 @@ Table of Contents
    ["dpo@thebestcontroller.com"], "GDPR_type": "processor|controller" }
    ] }
 
-   ] }
+   ] } ```
 
 6.  Beneficiary metadata
 
@@ -263,7 +263,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document Section Section 5 of this specification
+   *  Specification Document Section 5 of this specification
 
 10.  References
 

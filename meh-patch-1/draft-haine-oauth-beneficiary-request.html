@@ -1287,14 +1287,16 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         </h3>
 <p id="section-5.1-1">In this example, <code>beneficiary_id</code> points to the entity configuration that the Authorization Server can resolve.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <p id="section-5.1-2">Note: Each ecosystem defines its own entity resolution and trust resolution rules, which are out of scope for this specification.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
-<p id="section-5.1-3">{
+<p id="section-5.1-3"><code>
+{
     "beneficiaries": [
         {
             "beneficiary_id": "openid_federation:https://www.trust_anchor.org/entity/1234",
             "discovery_method": "OIDFed"
         }
    ]
-}<a href="#section-5.1-3" class="pilcrow">¶</a></p>
+}
+</code><a href="#section-5.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="example-2">
@@ -1303,7 +1305,8 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-example-2" class="section-name selfRef">Example 2</a>
         </h3>
 <p id="section-5.2-1">In this example there are two "beneficiaries" the first of which is an intermediary which in turn has one beneficiary "1234" that it passes data to.  In this case the intermediary entity metadata can be discovered and trused via an OpenID Federation endpoint and the end beneficiary ("1234") uses an "embedded metadata" mechanism.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
-<p id="section-5.2-2">{
+<p id="section-5.2-2">```
+{
     "beneficiaries": [
         {
             "beneficiary_id": "https://intermediary-one.co.uk",
@@ -1325,7 +1328,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         }<a href="#section-5.2-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-5.2-3">
 <pre>
-] }
+] } ```
 </pre><a href="#section-5.2-3" class="pilcrow">¶</a>
 </div>
 </section>
@@ -1442,7 +1445,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
             <p id="section-9.1-1.3.1">Change Controller: IETF<a href="#section-9.1-1.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-9.1-1.4">
-            <p id="section-9.1-1.4.1">Specification Document Section <a href="#beneficiaries" class="auto internal xref">Section 5</a> of this specification<a href="#section-9.1-1.4.1" class="pilcrow">¶</a></p>
+            <p id="section-9.1-1.4.1">Specification Document <a href="#beneficiaries" class="auto internal xref">Section 5</a> of this specification<a href="#section-9.1-1.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
